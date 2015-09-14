@@ -6,7 +6,7 @@ var select = require('unist-util-select'),
 
 module.exports = function () {
   return function (ast) {
-    select(parents(ast), 'link, linkReference, image, imageReference')
+    select(parents(ast), 'link, linkReference, image, imageReference, definition')
       .forEach(function (el) {
         var siblings = el.parent.node.children;
         var index = siblings.indexOf(el.node);

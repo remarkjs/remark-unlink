@@ -12,6 +12,9 @@ module.exports = function () {
         var siblings = el.parent.node.children;
         var index = siblings.indexOf(el.node);
         [].splice.apply(siblings, [index, 1].concat(el.node.children || []));
+        (el.children || []).forEach(function (child) {
+          child.parent = el.parent;
+        });
       });
     squeezeParagraphs(ast);
   };

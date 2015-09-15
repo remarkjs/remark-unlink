@@ -5,12 +5,19 @@ var mdastUnlink = require('..');
 var mdast = require('mdast'),
     test = require('tape');
 
-var fs = require('fs');
+var fs = require('fs'),
+    path = require('path');
 
 
 test(function (t) {
-  var input = fs.readFileSync(__dirname + '/input.md', 'utf8');
-  var output = fs.readFileSync(__dirname + '/output.md', 'utf8');
-  t.deepEqual(mdast.use(mdastUnlink).process(input), mdast.process(output));
+  t.equal(mdast.use(mdastUnlink).process(read('input1')),
+          mdast.process(read('output1')));
+  t.equal(mdast.use(mdastUnlink).process(read('input2')),
+          mdast.process(read('output2')));
   t.end();
 });
+
+
+function read (name) {
+  return fs.readFileSync(path.join(__dirname, name) + '.md', 'utf8');
+}

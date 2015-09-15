@@ -27,7 +27,9 @@
     "text"
   ],
   "dependencies": {
-    "mdast-squeeze-paragraphs": "^1.1.0"
+    "mdast-squeeze-paragraphs": "^1.1.0",
+    "unist-util-parents": "^0.1.0",
+    "unist-util-select": "^1.0.0"
   },
   "devDependencies": {
     "mdast": "^1.2.0",

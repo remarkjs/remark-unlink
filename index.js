@@ -1,7 +1,8 @@
 'use strict';
 
 var select = require('unist-util-select'),
-    parents = require('unist-util-parents');
+    parents = require('unist-util-parents'),
+    squeezeParagraphs = require('mdast-squeeze-paragraphs')();
 
 
 module.exports = function () {
@@ -12,5 +13,6 @@ module.exports = function () {
         var index = siblings.indexOf(el.node);
         [].splice.apply(siblings, [index, 1].concat(el.node.children || []));
       });
+    squeezeParagraphs(ast);
   };
 };

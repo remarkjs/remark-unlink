@@ -26,6 +26,8 @@
     "remove",
     "text"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "mdast-squeeze-paragraphs": "^1.1.0"
+  },
   "devDependencies": {}
 }

@@ -29,5 +29,8 @@
   "dependencies": {
     "mdast-squeeze-paragraphs": "^1.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "mdast": "^1.2.0",
+    "tape": "^4.2.0"
+  }
 }

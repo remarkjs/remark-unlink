@@ -1,6 +1,6 @@
 {
   "name": "mdast-unlink",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Remove all links, references and definitions",
   "author": "Eugene Sharygin <eush77@gmail.com>",
   "license": "MIT",

@@ -1,5 +1,5 @@
 {
-  "name": "mdast-unlink",
+  "name": "remark-unlink",
   "version": "1.0.1",
   "description": "Remove all links, references and definitions",
   "author": "Eugene Sharygin <eush77@gmail.com>",
@@ -10,10 +10,10 @@
   "files": [
     "index.js"
   ],
-  "homepage": "https://github.com/eush77/mdast-unlink",
-  "repository": "eush77/mdast-unlink",
+  "homepage": "https://github.com/eush77/remark-unlink",
+  "repository": "eush77/remark-unlink",
   "bugs": {
-    "url": "https://github.com/eush77/mdast-unlink/issues"
+    "url": "https://github.com/eush77/remark-unlink/issues"
   },
   "keywords": [
     "definitions",
@@ -23,6 +23,7 @@
     "mdast",
     "plaintext",
     "references",
+    "remark",
     "remove",
     "text"
   ],
@@ -32,7 +33,7 @@
     "unist-util-select": "^1.0.0"
   },
   "devDependencies": {
-    "mdast": "^1.2.0",
+    "remark": "^3.0.0",
     "tape": "^4.2.0"
   }
 }

@@ -1,8 +1,8 @@
 'use strict';
 
-var mdastUnlink = require('..');
+var remarkUnlink = require('..');
 
-var mdast = require('mdast'),
+var remark = require('remark'),
     test = require('tape');
 
 var fs = require('fs'),
@@ -10,10 +10,10 @@ var fs = require('fs'),
 
 
 test(function (t) {
-  t.equal(mdast.use(mdastUnlink).process(read('input1')),
-          mdast.process(read('output1')));
-  t.equal(mdast.use(mdastUnlink).process(read('input2')),
-          mdast.process(read('output2')));
+  t.equal(remark.use(remarkUnlink).process(read('input1')),
+          remark.process(read('output1')));
+  t.equal(remark.use(remarkUnlink).process(read('input2')),
+          remark.process(read('output2')));
   t.end();
 });
 

@@ -2,7 +2,7 @@
 
 var select = require('unist-util-select'),
     parents = require('unist-util-parents'),
-    squeezeParagraphs = require('mdast-squeeze-paragraphs')();
+    squeezeParagraphs = require('mdast-squeeze-paragraphs');
 
 
 module.exports = function () {

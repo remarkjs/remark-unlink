@@ -10,10 +10,10 @@ var fs = require('fs'),
 
 
 test(function (t) {
-  t.equal(remark.use(remarkUnlink).process(read('input1')),
-          remark.process(read('output1')));
-  t.equal(remark.use(remarkUnlink).process(read('input2')),
-          remark.process(read('output2')));
+  t.equal(remark().use(remarkUnlink).processSync(read('input1')).toString(),
+          remark().processSync(read('output1')).toString());
+  t.equal(remark().use(remarkUnlink).processSync(read('input2')).toString(),
+          remark().processSync(read('output2')).toString());
   t.end();
 });
 

@@ -66,7 +66,7 @@ More content.
 ```js
 var remarkUnlink = require('remark-unlink');
 
-remark.use(remarkUnlink)
+remark().use(remarkUnlink)
 ```
 
 Or from the command line:

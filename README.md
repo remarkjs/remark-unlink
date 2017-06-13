@@ -4,7 +4,7 @@
 
 [![Build Status][travis-badge]][travis] [![Dependency Status][david-badge]][david]
 
-Remove all links, references and definitions. A plugin for [remark].
+Remove all links, references and definitions. A plugin for [remark][].
 
 Original motivation was to process Markdown documents in a way that would make it easier to read as a plain text.
 

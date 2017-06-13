@@ -29,7 +29,7 @@
   ],
   "dependencies": {
     "mdast-squeeze-paragraphs": "^3.0.0",
-    "unist-util-parents": "^0.1.0",
+    "unist-util-parents": "^1.0.0",
     "unist-util-select": "^1.0.0"
   },
   "devDependencies": {

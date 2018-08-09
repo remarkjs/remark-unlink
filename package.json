@@ -2,19 +2,7 @@
   "name": "remark-unlink",
   "version": "2.0.1",
   "description": "Remove all links, references and definitions",
-  "author": "Eugene Sharygin <eush77@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "test": "tape test/*.js"
-  },
-  "files": [
-    "index.js"
-  ],
-  "homepage": "https://github.com/eush77/remark-unlink",
-  "repository": "eush77/remark-unlink",
-  "bugs": {
-    "url": "https://github.com/eush77/remark-unlink/issues"
-  },
   "keywords": [
     "definitions",
     "filter",
@@ -27,6 +15,16 @@
     "remove",
     "text"
   ],
+  "repository": "eush77/remark-unlink",
+  "bugs": "https://github.com/eush77/remark-unlink/issues",
+  "author": "Eugene Sharygin <eush77@gmail.com>",
+  "contributors": [
+    "Eugene Sharygin <eush77@gmail.com>",
+    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
+  ],
   "dependencies": {
     "mdast-squeeze-paragraphs": "^3.0.0",
     "unist-util-parents": "^1.0.0",
@@ -35,5 +33,8 @@
   "devDependencies": {
     "remark": "^7.0.0",
     "tape": "^4.2.0"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
   }
 }

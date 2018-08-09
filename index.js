@@ -1,8 +1,9 @@
 'use strict'
 
-var select = require('unist-util-select')
-var parents = require('unist-util-parents')
+var visit = require('unist-util-visit')
 var squeezeParagraphs = require('mdast-squeeze-paragraphs')
+
+var types = ['link', 'linkReference', 'image', 'imageReference', 'definition']
 
 var splice = [].splice
 
@@ -13,27 +14,14 @@ function unlink() {
 }
 
 function transformer(tree) {
-  var nodes = select(
-    parents(tree),
-    'link, linkReference, image, imageReference, definition'
-  )
-
-  nodes.forEach(each)
-
+  visit(tree, types, visitor)
   squeezeParagraphs(tree)
 }
 
-function each(el) {
-  var parent = el.parent
-  var siblings = parent.node.children
-  var index = siblings.indexOf(el.node)
-  var children = el.children || []
+function visitor(node, index, parent) {
+  var siblings = parent.children
 
-  splice.apply(siblings, [index, 1].concat(children))
+  splice.apply(siblings, [index, 1].concat(node.children || []))
 
-  children.forEach(patch)
-
-  function patch(child) {
-    child.parent = parent
-  }
+  return index
 }

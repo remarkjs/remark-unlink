@@ -1,16 +1,12 @@
 'use strict'
 
+var fs = require('fs')
+var path = require('path')
+var remark = require('remark')
+var test = require('tape')
 var remarkUnlink = require('..')
 
-var remark = require('remark')
-
-var test = require('tape')
-
-var fs = require('fs')
-
-var path = require('path')
-
-test(function(t) {
+test('remark-unlink', function(t) {
   t.equal(
     remark()
       .use(remarkUnlink)
@@ -18,8 +14,10 @@ test(function(t) {
       .toString(),
     remark()
       .processSync(read('output1'))
-      .toString()
+      .toString(),
+    '#1'
   )
+
   t.equal(
     remark()
       .use(remarkUnlink)
@@ -27,8 +25,10 @@ test(function(t) {
       .toString(),
     remark()
       .processSync(read('output2'))
-      .toString()
+      .toString(),
+    '#2'
   )
+
   t.end()
 })
 

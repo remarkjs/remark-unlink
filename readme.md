@@ -19,7 +19,7 @@ npm install remark-unlink
 Say we have the following file, `example.md`.
 Imagine section titles and URLs a bit longer though.
 
-```md
+```markdown
 ## TOC
 
 - [section 1](#section-1)
@@ -55,7 +55,7 @@ remark()
 
 Now, running `node example` yields:
 
-```md
+```markdown
 ## TOC
 
 -   section 1

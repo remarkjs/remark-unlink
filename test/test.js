@@ -1,23 +1,37 @@
-'use strict';
+'use strict'
 
-var remarkUnlink = require('..');
+var remarkUnlink = require('..')
 
-var remark = require('remark'),
-    test = require('tape');
+var remark = require('remark')
 
-var fs = require('fs'),
-    path = require('path');
+var test = require('tape')
 
+var fs = require('fs')
 
-test(function (t) {
-  t.equal(remark().use(remarkUnlink).processSync(read('input1')).toString(),
-          remark().processSync(read('output1')).toString());
-  t.equal(remark().use(remarkUnlink).processSync(read('input2')).toString(),
-          remark().processSync(read('output2')).toString());
-  t.end();
-});
+var path = require('path')
 
+test(function(t) {
+  t.equal(
+    remark()
+      .use(remarkUnlink)
+      .processSync(read('input1'))
+      .toString(),
+    remark()
+      .processSync(read('output1'))
+      .toString()
+  )
+  t.equal(
+    remark()
+      .use(remarkUnlink)
+      .processSync(read('input2'))
+      .toString(),
+    remark()
+      .processSync(read('output2'))
+      .toString()
+  )
+  t.end()
+})
 
-function read (name) {
-  return fs.readFileSync(path.join(__dirname, name) + '.md', 'utf8');
+function read(name) {
+  return fs.readFileSync(path.join(__dirname, name) + '.md', 'utf8')
 }

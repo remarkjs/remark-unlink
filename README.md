@@ -2,18 +2,14 @@
 
 # remark-unlink
 
-[![Build Status][travis-badge]][travis] [![Dependency Status][david-badge]][david]
+[![Build Status][travis-badge]][travis]
+[![Dependency Status][david-badge]][david]
 
-Remove all links, references and definitions. A plugin for [remark][].
+Remove all links, references and definitions.
+A plugin for [remark][].
 
-Original motivation was to process Markdown documents in a way that would make it easier to read as a plain text.
-
-[remark]: https://github.com/wooorm/remark
-
-[travis]: https://travis-ci.org/eush77/remark-unlink
-[travis-badge]: https://travis-ci.org/eush77/remark-unlink.svg?branch=master
-[david]: https://david-dm.org/eush77/remark-unlink
-[david-badge]: https://david-dm.org/eush77/remark-unlink.png
+Original motivation was to process Markdown documents in a way that would make
+it easier to read as a plain text.
 
 ## Example
 
@@ -38,9 +34,11 @@ Section [content][1] may include some [links](https://domain.name/path).
 More content.
 ```
 
-Imagine section titles and URLs being longer. On an ebook reader or a piece paper they are not only useless but looking ugly as well.
+Imagine section titles and URLs being longer.
+On an ebook reader or a piece paper they are not only useless but look ugly
+as well.
 
-```
+```sh
 $ remark -u unlink test/input.md
 ```
 
@@ -71,17 +69,26 @@ remark().use(remarkUnlink)
 
 Or from the command line:
 
-```
+```sh
 $ remark --use remark-unlink
 ```
 
-
 ## Install
 
-```
+```sh
 npm install remark-unlink
 ```
 
 ## License
 
 MIT
+
+[remark]: https://github.com/wooorm/remark
+
+[travis]: https://travis-ci.org/eush77/remark-unlink
+
+[travis-badge]: https://travis-ci.org/eush77/remark-unlink.svg?branch=master
+
+[david]: https://david-dm.org/eush77/remark-unlink
+
+[david-badge]: https://david-dm.org/eush77/remark-unlink.png

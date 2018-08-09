@@ -1,6 +1,6 @@
 {
   "name": "remark-unlink",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Remove all links, references and definitions",
   "license": "MIT",
   "keywords": [

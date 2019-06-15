@@ -3,17 +3,19 @@
 [![Build][build-badge]][build]
 [![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][downloads]
-[![Chat][chat-badge]][chat]
+[![Size][size-badge]][size]
 [![Sponsors][sponsors-badge]][collective]
 [![Backers][backers-badge]][collective]
+[![Chat][chat-badge]][chat]
 
-Remove all links, references, and definitions with [**remark**][remark].
+[**remark**][remark] plugin to remove all links, images, references, and
+definitions.
 
 Original motivation was to process Markdown documents in a way that would make
 it easier to read as a plain text.
 On an ebook reader or a piece of paper the links are useless and look ugly.
 
-## Installation
+## Install
 
 [npm][]:
 
@@ -21,7 +23,7 @@ On an ebook reader or a piece of paper the links are useless and look ugly.
 npm install remark-unlink
 ```
 
-## Usage
+## Use
 
 Say we have the following file, `example.md`.
 Imagine section titles and URLs a bit longer though.
@@ -81,21 +83,23 @@ More content.
 
 #### `remark().use(unlink)`
 
-Transform the tree to remove links, images, references, and definitions.
+Plugin to remove all links, images, references, and definitions.
 
 ## Contribute
 
-See [`contributing.md` in `remarkjs/remark`][contributing] for ways to get
-started.
+See [`contributing.md`][contributing] in [`remarkjs/.github`][health] for ways
+to get started.
+See [`support.md`][support] for ways to get help.
 
-This organisation has a [Code of Conduct][coc].  By interacting with this
-repository, organisation, or community you agree to abide by its terms.
+This project has a [Code of Conduct][coc].
+By interacting with this repository, organisation, or community you agree to
+abide by its terms.
 
 ## License
 
 [MIT][license] © Eugene Sharygin
 
-[build-badge]: https://img.shields.io/travis/remarkjs/remark-unlink.svg
+[build-badge]: https://img.shields.io/travis/remarkjs/remark-unlink/master.svg
 
 [build]: https://travis-ci.org/remarkjs/remark-unlink
 
@@ -107,9 +111,9 @@ repository, organisation, or community you agree to abide by its terms.
 
 [downloads]: https://www.npmjs.com/package/remark-unlink
 
-[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+[size-badge]: https://img.shields.io/bundlephobia/minzip/remark-unlink.svg
 
-[chat]: https://spectrum.chat/unified/remark
+[size]: https://bundlephobia.com/result?p=remark-unlink
 
 [sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
 
@@ -117,12 +121,20 @@ repository, organisation, or community you agree to abide by its terms.
 
 [collective]: https://opencollective.com/unified
 
-[license]: license
+[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+
+[chat]: https://spectrum.chat/unified/remark
 
 [npm]: https://docs.npmjs.com/cli/install
 
-[contributing]: https://github.com/remarkjs/remark/blob/master/contributing.md
+[health]: https://github.com/remarkjs/.github
 
-[coc]: https://github.com/remarkjs/remark/blob/master/code-of-conduct.md
+[contributing]: https://github.com/remarkjs/.github/blob/master/contributing.md
+
+[support]: https://github.com/remarkjs/.github/blob/master/support.md
+
+[coc]: https://github.com/remarkjs/.github/blob/master/code-of-conduct.md
+
+[license]: license
 
 [remark]: https://github.com/remarkjs/remark

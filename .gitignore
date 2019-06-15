@@ -3,4 +3,6 @@
 .nyc_output/
 coverage/
 node_modules/
+remark-unlink.js
+remark-unlink.min.js
 yarn.lock

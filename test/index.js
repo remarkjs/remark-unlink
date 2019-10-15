@@ -29,6 +29,17 @@ test('remark-unlink', function(t) {
     '#2'
   )
 
+  t.equal(
+    remark()
+      .use(remarkUnlink, {allow: ['image']})
+      .processSync(read('input3'))
+      .toString(),
+    remark()
+      .processSync(read('output3'))
+      .toString(),
+    '#3'
+  )
+
   t.end()
 })
 

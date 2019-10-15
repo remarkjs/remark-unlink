@@ -9,13 +9,20 @@ var splice = [].splice
 
 module.exports = unlink
 
-function unlink() {
+function unlink(options = {}) {
   return transformer
-}
 
-function transformer(tree) {
-  visit(tree, types, visitor)
-  squeezeParagraphs(tree)
+  function transformer(tree) {
+    var customTypes = [].concat(types)
+    if (Array.isArray(options.allow)) {
+      for (var i = 0, len = options.allow.length; i < len; i++) {
+        customTypes.splice(customTypes.indexOf(options.allow[i]), 1)
+      }
+    }
+
+    visit(tree, customTypes, visitor)
+    squeezeParagraphs(tree)
+  }
 }
 
 function visitor(node, index, parent) {

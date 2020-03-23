@@ -34,7 +34,7 @@
     "index.js"
   ],
   "dependencies": {
-    "mdast-squeeze-paragraphs": "^3.0.0",
+    "mdast-squeeze-paragraphs": "^4.0.0",
     "unist-util-visit": "^1.4.0"
   },
   "devDependencies": {

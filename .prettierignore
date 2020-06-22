@@ -1,3 +1,5 @@
 coverage/
 remark-unlink.js
 remark-unlink.min.js
+*.json
+*.md

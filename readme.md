@@ -15,6 +15,12 @@ Original motivation was to process Markdown documents in a way that would make
 it easier to read as a plain text.
 On an ebook reader or a piece of paper the links are useless and look ugly.
 
+## Note!
+
+This plugin is ready for the new parser in remark
+([`remarkjs/remark#536`](https://github.com/remarkjs/remark/pull/536)).
+No change is needed: it works exactly the same now as it did before!
+
 ## Install
 
 [npm][]:

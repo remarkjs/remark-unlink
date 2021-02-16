@@ -111,9 +111,9 @@ abide by its terms.
 
 [MIT][license] © Eugene Sharygin
 
-[build-badge]: https://img.shields.io/travis/remarkjs/remark-unlink.svg
+[build-badge]: https://github.com/remarkjs/remark-unlink/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/remarkjs/remark-unlink
+[build]: https://github.com/remarkjs/remark-unlink/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/remarkjs/remark-unlink.svg
 

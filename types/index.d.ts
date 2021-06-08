@@ -5,6 +5,6 @@ import type {Plugin} from 'unified'
 /**
  * Remark plugin to remove Markdown links, images, references, and definitions.
  */
-declare const remarkUnlink: Plugin
+declare const remarkUnlink: Plugin<[]>
 
 export = remarkUnlink

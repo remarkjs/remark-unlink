@@ -52,7 +52,7 @@
     "xo": "^0.37.0"
   },
   "scripts": {
-    "format": "remark . -qfo --ignore-pattern test/ && prettier . -w --loglevel warn && xo --fix",
+    "format": "remark . -qfo --ignore-pattern test/ && prettier . -w --loglevel warn && xo --fix --ignore types",
     "build-bundle": "browserify . -s remarkUnlink -o remark-unlink.js",
     "build-mangle": "browserify . -s remarkUnlink -p tinyify -o remark-unlink.min.js",
     "build": "npm run build-bundle && npm run build-mangle",

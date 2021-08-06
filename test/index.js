@@ -20,6 +20,10 @@ test('remark-unlink', (t) => {
   t.end()
 })
 
+/**
+ * @param {string} name
+ * @returns {string}
+ */
 function read(name) {
   return fs.readFileSync(path.join('test', name) + '.md', 'utf8')
 }

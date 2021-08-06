@@ -40,7 +40,6 @@
     "unist-util-visit": "^2.0.0"
   },
   "devDependencies": {
-    "browserify": "^17.0.0",
     "dtslint": "^4.1.0",
     "nyc": "^15.0.0",
     "prettier": "^2.0.0",
@@ -48,14 +47,10 @@
     "remark-cli": "^9.0.0",
     "remark-preset-wooorm": "^8.0.0",
     "tape": "^5.0.0",
-    "tinyify": "^3.0.0",
     "xo": "^0.37.0"
   },
   "scripts": {
     "format": "remark . -qfo --ignore-pattern test/ && prettier . -w --loglevel warn && xo --fix --ignore types",
-    "build-bundle": "browserify . -s remarkUnlink -o remark-unlink.js",
-    "build-mangle": "browserify . -s remarkUnlink -p tinyify -o remark-unlink.min.js",
-    "build": "npm run build-bundle && npm run build-mangle",
     "test-api": "node test",
     "test-types": "dtslint types",
     "test-coverage": "nyc --reporter lcov tape test/index.js",

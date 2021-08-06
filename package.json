@@ -30,9 +30,10 @@
     "Eugene Sharygin <eush77@gmail.com>",
     "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
   ],
-  "types": "types/index.d.ts",
+  "sideEffects": false,
+  "type": "module",
+  "main": "index.js",
   "files": [
-    "types/index.d.ts",
     "index.js"
   ],
   "dependencies": {

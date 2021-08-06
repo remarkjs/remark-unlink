@@ -1,15 +1,11 @@
-'use strict'
-
-var visit = require('unist-util-visit')
-var squeezeParagraphs = require('mdast-squeeze-paragraphs')
+import visit from 'unist-util-visit'
+import squeezeParagraphs from 'mdast-squeeze-paragraphs'
 
 var types = ['link', 'linkReference', 'image', 'imageReference', 'definition']
 
 var splice = [].splice
 
-module.exports = unlink
-
-function unlink() {
+export default function remarkUnlink() {
   return transformer
 }
 

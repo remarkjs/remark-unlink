@@ -1,10 +1,8 @@
-'use strict'
-
-var fs = require('fs')
-var path = require('path')
-var remark = require('remark')
-var test = require('tape')
-var remarkUnlink = require('..')
+import fs from 'fs'
+import path from 'path'
+import remark from 'remark'
+import test from 'tape'
+import remarkUnlink from '../index.js'
 
 test('remark-unlink', function (t) {
   t.equal(
@@ -23,5 +21,5 @@ test('remark-unlink', function (t) {
 })
 
 function read(name) {
-  return fs.readFileSync(path.join(__dirname, name) + '.md', 'utf8')
+  return fs.readFileSync(path.join('test', name) + '.md', 'utf8')
 }

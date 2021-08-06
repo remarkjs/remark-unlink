@@ -4,7 +4,7 @@ import test from 'tape'
 import {remark} from 'remark'
 import remarkUnlink from '../index.js'
 
-test('remark-unlink', function (t) {
+test('remark-unlink', (t) => {
   t.equal(
     remark().use(remarkUnlink).processSync(read('input1')).toString(),
     remark().processSync(read('output1')).toString(),

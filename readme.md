@@ -23,6 +23,9 @@ No change is needed: it works exactly the same now as it did before!
 
 ## Install
 
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
+Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -53,17 +56,19 @@ Section [content][1] may include some [links](https://domain.name/path).
 More content.
 ```
 
-And our script, `example.js`, looks as follows:
+And our module, `example.js`, looks as follows:
 
 ```js
-var vfile = require('to-vfile')
-var remark = require('remark')
-var unlink = require('remark-unlink')
+import {readSync} from 'to-vfile'
+import {remark} from 'remark'
+import remarkUnlink from 'remark-unlink'
+
+const file = readSync('example.md')
 
 remark()
-  .use(unlink)
-  .process(vfile.readSync('example.md'), function(err, file) {
-    if (err) throw err
+  .use(remarkUnlink)
+  .process(file)
+  .then((file) => {
     console.log(String(file))
   })
 ```
@@ -87,7 +92,10 @@ More content.
 
 ## API
 
-#### `remark().use(unlink)`
+This package exports no identifiers.
+The default export is `remarkUnlink`.
+
+#### `unified().use(remarkUnlink)`
 
 Plugin to remove all links, images, references, and definitions.
 

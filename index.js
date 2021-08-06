@@ -1,5 +1,5 @@
-import visit from 'unist-util-visit'
-import squeezeParagraphs from 'mdast-squeeze-paragraphs'
+import {visit} from 'unist-util-visit'
+import {squeezeParagraphs} from 'mdast-squeeze-paragraphs'
 
 var types = ['link', 'linkReference', 'image', 'imageReference', 'definition']
 

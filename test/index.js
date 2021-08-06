@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-import remark from 'remark'
 import test from 'tape'
+import {remark} from 'remark'
 import remarkUnlink from '../index.js'
 
 test('remark-unlink', function (t) {

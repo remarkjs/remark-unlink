@@ -8,34 +8,63 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-[**remark**][remark] plugin to remove all links, images, references, and
-definitions.
+**[remark][]** plugin to remove all links, images, references, and definitions.
 
-Original motivation was to process Markdown documents in a way that would make
-it easier to read as a plain text.
-On an ebook reader or a piece of paper the links are useless and look ugly.
+## Contents
 
-## Note!
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Security](#security)
+*   [Contribute](#contribute)
+*   [License](#license)
 
-This plugin is ready for the new parser in remark
-([`remarkjs/remark#536`](https://github.com/remarkjs/remark/pull/536)).
-No change is needed: it works exactly the same now as it did before!
+## What is this?
+
+This package is a [unified][] ([remark][]) plugin to remove all links and
+images.
+
+**unified** is a project that transforms content with abstract syntax trees
+(ASTs).
+**remark** adds support for markdown to unified.
+**mdast** is the markdown AST that remark uses.
+This is a remark plugin that transforms mdast.
+
+## When should I use this?
+
+This project is useful if you display markdown documents somewhere where links
+and images don’t work, such as man pages, on paper, or some ereaders.
 
 ## Install
 
-This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
-Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
-
-[npm][]:
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
+In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
 
 ```sh
 npm install remark-unlink
 ```
 
+In Deno with [Skypack][]:
+
+```js
+import remarkUnlink from 'https://cdn.skypack.dev/remark-unlink@4?dts'
+```
+
+In browsers with [Skypack][]:
+
+```html
+<script type="module">
+  import remarkUnlink from 'https://cdn.skypack.dev/remark-unlink@4?min'
+</script>
+```
+
 ## Use
 
-Say we have the following file, `example.md`.
-Imagine section titles and URLs a bit longer though.
+Say we have the following file `example.md`.
 
 ```markdown
 ## TOC
@@ -56,21 +85,22 @@ Section [content][1] may include some [links](https://domain.name/path).
 More content.
 ```
 
-And our module, `example.js`, looks as follows:
+And our module `example.js` looks as follows:
 
 ```js
-import {readSync} from 'to-vfile'
+import {read} from 'to-vfile'
 import {remark} from 'remark'
 import remarkUnlink from 'remark-unlink'
 
-const file = readSync('example.md')
+main()
 
-remark()
-  .use(remarkUnlink)
-  .process(file)
-  .then((file) => {
-    console.log(String(file))
-  })
+async function main() {
+  const file = await remark()
+    .use(remarkUnlink)
+    .process(await read('example.md'))
+
+  console.log(String(file))
+}
 ```
 
 Now, running `node example` yields:
@@ -78,8 +108,8 @@ Now, running `node example` yields:
 ```markdown
 ## TOC
 
--   section 1
--   section 2
+*   section 1
+*   section 2
 
 ## section 1
 
@@ -98,12 +128,26 @@ The default export is `remarkUnlink`.
 #### `unified().use(remarkUnlink)`
 
 Plugin to remove all links, images, references, and definitions.
+There are no options.
+
+## Types
+
+This package is fully typed with [TypeScript][].
+There are no extra exported types.
+
+## Compatibility
+
+Projects maintained by the unified collective are compatible with all maintained
+versions of Node.js.
+As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
+Our projects sometimes work with older versions, but this is not guaranteed.
+
+This plugin works with `unified` version 3+ and `remark` version 4+.
 
 ## Security
 
-Use of `remark-unlink` does not involve [**rehype**][rehype] ([**hast**][hast])
-or user content so there are no openings for [cross-site scripting (XSS)][xss]
-attacks.
+Use of `remark-unlink` does not involve **[rehype][]** (**[hast][]**) or user
+content so there are no openings for [cross-site scripting (XSS)][xss] attacks.
 
 ## Contribute
 
@@ -147,6 +191,8 @@ abide by its terms.
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[skypack]: https://www.skypack.dev
+
 [health]: https://github.com/remarkjs/.github
 
 [contributing]: https://github.com/remarkjs/.github/blob/HEAD/contributing.md
@@ -159,7 +205,11 @@ abide by its terms.
 
 [remark]: https://github.com/remarkjs/remark
 
+[unified]: https://github.com/unifiedjs/unified
+
 [xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+
+[typescript]: https://www.typescriptlang.org
 
 [rehype]: https://github.com/rehypejs/rehype
 

@@ -48,17 +48,17 @@ In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
 npm install remark-unlink
 ```
 
-In Deno with [Skypack][]:
+In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import remarkUnlink from 'https://cdn.skypack.dev/remark-unlink@4?dts'
+import remarkUnlink from 'https://esm.sh/remark-unlink@4'
 ```
 
-In browsers with [Skypack][]:
+In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import remarkUnlink from 'https://cdn.skypack.dev/remark-unlink@4?min'
+  import remarkUnlink from 'https://esm.sh/remark-unlink@4?bundle'
 </script>
 ```
 
@@ -191,7 +191,7 @@ abide by its terms.
 
 [npm]: https://docs.npmjs.com/cli/install
 
-[skypack]: https://www.skypack.dev
+[esmsh]: https://esm.sh
 
 [health]: https://github.com/remarkjs/.github
 

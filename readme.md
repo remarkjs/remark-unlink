@@ -28,12 +28,6 @@
 This package is a [unified][] ([remark][]) plugin to remove all links and
 images.
 
-**unified** is a project that transforms content with abstract syntax trees
-(ASTs).
-**remark** adds support for markdown to unified.
-**mdast** is the markdown AST that remark uses.
-This is a remark plugin that transforms mdast.
-
 ## When should I use this?
 
 This project is useful if you display markdown documents somewhere where links
@@ -41,8 +35,8 @@ and images don’t work, such as man pages, on paper, or some ereaders.
 
 ## Install
 
-This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
-In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
+This package is [ESM only][esm].
+In Node.js (version 16+), install with [npm][]:
 
 ```sh
 npm install remark-unlink
@@ -67,87 +61,86 @@ In browsers with [`esm.sh`][esmsh]:
 Say we have the following file `example.md`.
 
 ```markdown
-## TOC
+# Uranus
 
-- [section 1](#section-1)
-- [section 2](#section-2)
+**Uranus** is the seventh [planet](/wiki/Planet "Planet") from the Sun and is a
+gaseous cyan [ice giant](/wiki/Ice_giant "Ice giant").
 
-## section 1
+Photograph of Uranus in true colour by Voyager 2 in 1986:
 
-Section [content][1] may include some [links](https://domain.name/path).
-
-[1]: https://domain.name/path
-
-## section 2
-
-![some images are here also](https://gif.com/1.gif)
-
-More content.
+![This is an image of the planet Uranus taken by the spacecraft Voyager 2 in 1986.
+The Voyager project is managed for NASA by the Jet Propulsion Laboratory.](https://en.wikipedia.org/wiki/Uranus#/media/File:Uranus_as_seen_by_NASA's_Voyager_2_(remastered)_-_JPEG_converted.jpg)
 ```
 
-And our module `example.js` looks as follows:
+…and a module `example.js`:
 
 ```js
-import {read} from 'to-vfile'
 import {remark} from 'remark'
 import remarkUnlink from 'remark-unlink'
+import {read} from 'to-vfile'
 
-main()
+const file = await remark()
+  .use(remarkUnlink)
+  .process(await read('example.md'))
 
-async function main() {
-  const file = await remark()
-    .use(remarkUnlink)
-    .process(await read('example.md'))
-
-  console.log(String(file))
-}
+console.log(String(file))
 ```
 
-Now, running `node example` yields:
+…then running `node example.js` yields:
 
 ```markdown
-## TOC
+# Uranus
 
-*   section 1
-*   section 2
+**Uranus** is the seventh planet from the Sun and is a
+gaseous cyan ice giant.
 
-## section 1
+Photograph of Uranus in true colour by Voyager 2 in 1986:
 
-Section content may include some links.
-
-## section 2
-
-More content.
+This is an image of the planet Uranus taken by the spacecraft Voyager 2 in
+1986\.
+The Voyager project is managed for NASA by the Jet Propulsion
+Laboratory.
 ```
 
 ## API
 
 This package exports no identifiers.
-The default export is `remarkUnlink`.
+The default export is [`remarkUnlink`][api-remark-unlink].
 
 #### `unified().use(remarkUnlink)`
 
-Plugin to remove all links, images, references, and definitions.
-There are no options.
+Remove all links, images, references, and definitions.
+
+###### Parameters
+
+There are no parameters.
+
+###### Returns
+
+Transform ([`Transformer`][unified-transformer]).
 
 ## Types
 
 This package is fully typed with [TypeScript][].
-There are no extra exported types.
+It exports no additional types.
 
 ## Compatibility
 
-Projects maintained by the unified collective are compatible with all maintained
+Projects maintained by the unified collective are compatible with maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
-Our projects sometimes work with older versions, but this is not guaranteed.
+
+When we cut a new major release, we drop support for unmaintained versions of
+Node.
+This means we try to keep the current release line, `remark-unlink@^4`,
+compatible with Node.js 12.
 
 This plugin works with `unified` version 3+ and `remark` version 4+.
 
 ## Security
 
 Use of `remark-unlink` does not involve **[rehype][]** (**[hast][]**) or user
-content so there are no openings for [cross-site scripting (XSS)][xss] attacks.
+content so there are no openings for [cross-site scripting (XSS)][wiki-xss]
+attacks.
 
 ## Contribute
 
@@ -175,9 +168,9 @@ abide by its terms.
 
 [downloads]: https://www.npmjs.com/package/remark-unlink
 
-[size-badge]: https://img.shields.io/bundlephobia/minzip/remark-unlink.svg
+[size-badge]: https://img.shields.io/bundlejs/size/remark-unlink
 
-[size]: https://bundlephobia.com/result?p=remark-unlink
+[size]: https://bundlejs.com/?q=remark-unlink
 
 [sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
 
@@ -191,26 +184,32 @@ abide by its terms.
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
 [esmsh]: https://esm.sh
 
 [health]: https://github.com/remarkjs/.github
 
-[contributing]: https://github.com/remarkjs/.github/blob/HEAD/contributing.md
+[contributing]: https://github.com/remarkjs/.github/blob/main/contributing.md
 
-[support]: https://github.com/remarkjs/.github/blob/HEAD/support.md
+[support]: https://github.com/remarkjs/.github/blob/main/support.md
 
-[coc]: https://github.com/remarkjs/.github/blob/HEAD/code-of-conduct.md
+[coc]: https://github.com/remarkjs/.github/blob/main/code-of-conduct.md
 
 [license]: license
 
-[remark]: https://github.com/remarkjs/remark
-
-[unified]: https://github.com/unifiedjs/unified
-
-[xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
-
-[typescript]: https://www.typescriptlang.org
+[hast]: https://github.com/syntax-tree/hast
 
 [rehype]: https://github.com/rehypejs/rehype
 
-[hast]: https://github.com/syntax-tree/hast
+[remark]: https://github.com/remarkjs/remark
+
+[typescript]: https://www.typescriptlang.org
+
+[unified]: https://github.com/unifiedjs/unified
+
+[unified-transformer]: https://github.com/unifiedjs/unified#transformer
+
+[wiki-xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+
+[api-remark-unlink]: #unifieduseremarkunlink

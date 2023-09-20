@@ -9,4 +9,6 @@ Section content may include some links.
 
 ## section 2
 
+some images are here also
+
 More content.

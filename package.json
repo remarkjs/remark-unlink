@@ -1,6 +1,6 @@
 {
   "name": "remark-unlink",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "remark plugin to remove all links, images, references, and definitions",
   "license": "MIT",
   "keywords": [

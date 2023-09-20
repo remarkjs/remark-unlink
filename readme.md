@@ -45,14 +45,14 @@ npm install remark-unlink
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import remarkUnlink from 'https://esm.sh/remark-unlink@4'
+import remarkUnlink from 'https://esm.sh/remark-unlink@5'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import remarkUnlink from 'https://esm.sh/remark-unlink@4?bundle'
+  import remarkUnlink from 'https://esm.sh/remark-unlink@5?bundle'
 </script>
 ```
 
